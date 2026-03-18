@@ -1,0 +1,108 @@
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { postData } from '../api/api';
+
+const PostJob = () => {
+    const navigate = useNavigate();
+    const [formData, setFormData] = useState({
+        title: '', description: '', company: '', location: '', salary: '', jobType: 'full-time'
+    });
+    const [error, setError] = useState('');
+    const [loading, setLoading] = useState(false);
+
+    const handleChange = (e) => {
+        setFormData({ ...formData, [e.target.name]: e.target.value });
+    };
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        setLoading(true);
+        try {
+            const data = await postData('/api/jobs', formData, true);
+            if (data._id) {
+                navigate('/jobs');
+            } else {
+                setError(data.message);
+            }
+        } catch (err) {
+            setError('Something went wrong!');
+        }
+        setLoading(false);
+    };
+
+    return (
+        <div className="max-w-2xl mx-auto px-4 py-8">
+            <div className="bg-white rounded-xl shadow-md p-6">
+                <h2 className="text-2xl font-bold text-gray-800 mb-6">Post a Job</h2>
+
+                {error && (
+                    <p className="bg-red-100 text-red-600 p-3 rounded-lg mb-4 text-sm">
+                        {error}
+                    </p>
+                )}
+
+                <form onSubmit={handleSubmit} className="space-y-4">
+                    <div>
+                        <label className="text-sm text-gray-600">Job Title</label>
+                        <input type="text" name="title" value={formData.title}
+                            onChange={handleChange} placeholder="Backend Developer"
+                            className="w-full border border-gray-300 rounded-lg px-4 py-2 mt-1 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                            required />
+                    </div>
+
+                    <div>
+                        <label className="text-sm text-gray-600">Company Name</label>
+                        <input type="text" name="company" value={formData.company}
+                            onChange={handleChange} placeholder="Google India"
+                            className="w-full border border-gray-300 rounded-lg px-4 py-2 mt-1 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                            required />
+                    </div>
+
+                    <div>
+                        <label className="text-sm text-gray-600">Location</label>
+                        <input type="text" name="location" value={formData.location}
+                            onChange={handleChange} placeholder="Patna, Bihar"
+                            className="w-full border border-gray-300 rounded-lg px-4 py-2 mt-1 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                            required />
+                    </div>
+
+                    <div>
+                        <label className="text-sm text-gray-600">Salary (per month)</label>
+                        <input type="number" name="salary" value={formData.salary}
+                            onChange={handleChange} placeholder="80000"
+                            className="w-full border border-gray-300 rounded-lg px-4 py-2 mt-1 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                            required />
+                    </div>
+
+                    <div>
+                        <label className="text-sm text-gray-600">Job Type</label>
+                        <select name="jobType" value={formData.jobType}
+                            onChange={handleChange}
+                            className="w-full border border-gray-300 rounded-lg px-4 py-2 mt-1 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            <option value="full-time">Full Time</option>
+                            <option value="part-time">Part Time</option>
+                            <option value="internship">Internship</option>
+                            <option value="remote">Remote</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label className="text-sm text-gray-600">Description</label>
+                        <textarea name="description" value={formData.description}
+                            onChange={handleChange} placeholder="Job description..."
+                            rows={4}
+                            className="w-full border border-gray-300 rounded-lg px-4 py-2 mt-1 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                            required />
+                    </div>
+
+                    <button type="submit" disabled={loading}
+                        className="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition font-semibold">
+                        {loading ? 'Posting...' : 'Post Job'}
+                    </button>
+                </form>
+            </div>
+        </div>
+    );
+};
+
+export default PostJob
