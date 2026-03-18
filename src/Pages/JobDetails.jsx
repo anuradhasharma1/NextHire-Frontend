@@ -1,6 +1,6 @@
+import { getData, postData } from '../api/api';
 import { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom';
-import { getData, postData } from '../api/api';
 import { useAuth } from '../context/AuthContext';
 
 const JobDetails = () => {
@@ -21,7 +21,7 @@ const JobDetails = () => {
     }, [id]);
 
     const handleApply = async () => {
-        const data = await postData(`/api/jobs/${id}/apply`, {}, true);
+        const data = await postData(`/api/applications/${id}/apply`, {}, true);
         setMessage(data.message);
     };
 

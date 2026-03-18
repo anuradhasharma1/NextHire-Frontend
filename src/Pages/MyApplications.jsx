@@ -1,5 +1,6 @@
-import { useEffect, useState } from 'react';
 import { getData } from '../api/api';
+import { useEffect, useState } from 'react';
+
 
 const MyApplications = () => {
     const [applications, setApplications] = useState([]);

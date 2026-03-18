@@ -1,3 +1,5 @@
+import { data } from "react-router-dom";
+
 const BASE_URL = import.meta.env.VITE_API_URL;
 
 //heleper func to get token 
@@ -14,14 +16,14 @@ export const getData = async (endpoint) => {
 };
 
 //POST request 
-export const postData = async (endpoint, DataTransfer, needsAuth = false) => {
+export const postData = async (endpoint, body, needsAuth = false) => {
     const response = await fetch(`${BASE_URL}${endpoint}`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
             ...(needsAuth && { authorization: getToken() })
         },
-        body: JSON.stringify(data)
+        body: JSON.stringify(body)
     });
     return response.json();
 };

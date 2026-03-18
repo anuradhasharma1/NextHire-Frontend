@@ -1,5 +1,5 @@
-import { useState,useEffect } from 'react'
 import { getData } from '../api/api';
+import { useState,useEffect } from 'react'
 import JobCard from '../components/JobCard';
 
 const Jobs = () => {
@@ -24,7 +24,7 @@ const Jobs = () => {
     return (
         <div className='max-w-4xl mx-auto px-4 py-8'>
             <h1 className='text-3xl font-bold text-gray-800 mb-6'>All Jobs</h1>
-            {Jobs.length === 0 ? (
+            {jobs.length === 0 ? (
                 <p className=' text-gray-500'>No Jobs Posted Yet!</p>
             ) : (
                 <div className='grid gap-4'>

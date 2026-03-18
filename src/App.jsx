@@ -16,7 +16,7 @@ function App() {
 
   return (
     <>
-      <div className='min-h-screen bg-gray-50'>
+      <div className='min-h-screen bg-[#1B1212]'>
         <Navbar />
         <Routes>
           <Route path="/" element={<Jobs />} />

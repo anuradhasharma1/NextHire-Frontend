@@ -10,13 +10,13 @@ const Navbar = () => {
         navigate('/login');
     };
     return (
-        <nav className="bg-white shadow-md px-6 py-4 flex justify-between items-center">
-            <Link to="/" className="text-xl font-bold text-blue-600">
+        <nav className="bg-[#241919] shadow-md px-6 py-4 flex justify-between items-center">
+            <Link to="/" className="text-2xl font-bold text-[#FFFFFF]">
                 NextHire
             </Link>
 
             <div className="flex items-center gap-4">
-                <Link to="/jobs" className="text-gray-600 hover:text-blue-600 transition">
+                <Link to="/jobs" className="text-[#FFFFFF] hover:text-white font-bold transition">
                     Jobs
                 </Link>
 
@@ -43,11 +43,11 @@ const Navbar = () => {
                 ) : (
                     <div className="flex gap-2">
                         <Link to="/login"
-                            className="bg-blue-600 text-white px-4 py-1 rounded-lg hover:bg-blue-700 transition text-sm">
+                            className="bg-[#FF6B6B] font-semibold text-white px-4 py-1 rounded-lg hover:bg-[#2E1F1F] transition text-sm">
                             Login
                         </Link>
                         <Link to="/register"
-                            className="border border-blue-600 text-blue-600 px-4 py-1 rounded-lg hover:bg-blue-50 transition text-sm">
+                            className="border border-[#FF6B6B] text-[#FFFFFF] px-4 py-1 rounded-lg hover:bg-[#2E1F1F] transition text-sm font-semibold ">
                             Register
                         </Link>
                     </div>

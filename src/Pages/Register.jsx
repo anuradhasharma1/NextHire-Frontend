@@ -1,6 +1,7 @@
+import { postData } from '../api/api';
 import { useState } from 'react'
 import { useNavigate, Link } from 'react-router-dom'
-import { postData } from '../api/api';
+
 
 
 const Register = () => {
