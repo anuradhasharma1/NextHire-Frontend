@@ -1,4 +1,6 @@
-import { useState } from 'react'
+import { useState,useEffect } from 'react'
+import { getData } from '../api/api';
+import JobCard from '../components/JobCard';
 
 const Jobs = () => {
     const [jobs, setJobs] = useState([]);
@@ -27,7 +29,7 @@ const Jobs = () => {
             ) : (
                 <div className='grid gap-4'>
                     {jobs.map(job => (
-                        <jobCard key={job._id} job={job} />
+                        <JobCard key={job._id} job={job} />
                     ))}
                 </div>
             )}
