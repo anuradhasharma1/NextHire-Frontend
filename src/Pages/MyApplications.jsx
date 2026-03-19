@@ -23,7 +23,7 @@ const MyApplications = () => {
 
     return (
         <div className="max-w-4xl mx-auto px-4 py-8">
-            <h1 className="text-3xl font-bold text-gray-800 mb-6">My Applications</h1>
+            <h1 className="text-3xl font-bold text-[#ffff] mb-6">My Applications</h1>
             {applications.length === 0 ? (
                 <p className="text-gray-500">You have not applied for any jobs yet!</p>
             ) : (

@@ -5,7 +5,7 @@ import Login from './pages/Login';
 import Register from './pages/Register';
 import Jobs from './pages/Jobs';
 import JobDetails from './pages/JobDetails';
-import PostJob from './pages/PostJob';
+import PostJob from './Pages/PostJob';
 import MyApplications from './pages/MyApplications';
 import './App.css'
 
