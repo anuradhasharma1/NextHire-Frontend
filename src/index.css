@@ -1,1 +1,9 @@
 @import "tailwindcss";
+
+input{
+    color:#F5F5F5;
+}
+
+input::placeholder{
+    color:#7A6F6F ;
+}

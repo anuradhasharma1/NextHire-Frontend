@@ -20,13 +20,13 @@ const JobCard = ({ job, onDelete }) => {
   };
 
   return (
-    <div className="bg-white rounded-xl shadow-md p-5 hover:shadow-lg transition cursor-pointer"
+    <div className="bg-[#2E1F1F] rounded-xl shadow-md p-5 hover:shadow-lg transition cursor-pointer"
       onClick={() => navigate(`/jobs/${job._id}`)}>
       <div className="flex justify-between items-start">
         <div>
-          <h3 className="text-lg font-semibold text-black">{job.title}</h3>
+          <h3 className="text-lg font-semibold text-[#ffff]">{job.title}</h3>
           <p className="text-[#10B981] font-medium text-sm mt-1">{job.company}</p>
-          <div className="flex gap-4 mt-2 text-sm text-gray-500">
+          <div className="flex gap-4 mt-2 text-sm text-[#ffffffdc]">
             <span>{job.location}</span>
             <span>Rs. {job.salary}/month</span>
             <span className="capitalize">{job.jobType}</span>

@@ -10,10 +10,12 @@ const Navbar = () => {
         navigate('/login');
     };
     return (
-        <nav className="bg-[#241919] shadow-md px-6 py-4 flex justify-between items-center">
-            <Link to="/" className="text-2xl font-bold text-[#FFFFFF]">
+        <nav className="bg-[#241919] shadow-md px-8 py-4 flex justify-between items-center">
+            <Link to="/" className=" flex items-center text-3xl font-bold text-[#FFFFFF]">
                 NextHire
+                <img width={60} className="  invert" src="/logo.png " alt="" />
             </Link>
+
 
             <div className="flex items-center gap-4">
                 <Link to="/jobs" className="text-[#FFFFFF] hover:text-white font-bold transition">
@@ -21,13 +23,13 @@ const Navbar = () => {
                 </Link>
 
                 {user?.role === 'company' && (
-                    <Link to="/post-job" className="text-gray-600 hover:text-blue-600 transition">
+                    <Link to="/post-job" className="text-gray-600 hover:text-[#ffff] transition">
                         Post Job
                     </Link>
                 )}
 
                 {user?.role === 'candidate' && (
-                    <Link to="/my-applications" className="text-gray-600 hover:text-blue-600 transition">
+                    <Link to="/my-applications" className="text-[#ffff] font-semibold hover:text-[#7A6F6F] transition">
                         My Applications
                     </Link>
                 )}

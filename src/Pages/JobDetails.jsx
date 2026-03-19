@@ -34,17 +34,17 @@ const JobDetails = () => {
 
     return (
         <div className="max-w-3xl mx-auto px-4 py-8">
-            <div className="bg-white rounded-xl shadow-md p-6">
-                <h1 className="text-2xl font-bold text-gray-800">{job.title}</h1>
-                <p className="text-blue-600 font-semibold mt-1">{job.company}</p>
+            <div className="bg-[#2E1F1F] rounded-xl shadow-md p-6">
+                <h1 className="text-2xl font-bold text-[#ffff]">{job.title}</h1>
+                <p className="text-[#10B981] font-semibold mt-1">{job.company}</p>
 
-                <div className="flex gap-4 mt-3 text-sm text-gray-500">
+                <div className="flex gap-4 mt-3 text-sm text-[#ffffffdc]">
                     <span>{job.location}</span>
                     <span>Rs. {job.salary}/month</span>
                     <span className="capitalize">{job.jobType}</span>
                 </div>
 
-                <p className="mt-4 text-gray-600">{job.description}</p>
+                <p className="mt-4 text-[#ffffffab]">{job.description}</p>
 
                 {message && (
                     <p className="mt-4 bg-green-100 text-green-600 p-3 rounded-lg text-sm">
@@ -55,7 +55,7 @@ const JobDetails = () => {
                 {user?.role === 'candidate' && (
                     <button
                         onClick={handleApply}
-                        className="mt-6 bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition font-semibold"
+                        className="mt-6 bg-[#ff6b6b] text-white px-6 py-2 rounded-lg hover:bg-[#FF5252] transition font-semibold"
                     >
                         Apply Now
                     </button>
@@ -64,7 +64,7 @@ const JobDetails = () => {
                 {!user && (
                     <button
                         onClick={() => navigate('/login')}
-                        className="mt-6 bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition font-semibold"
+                        className="mt-6 bg-[#ff6b6b] text-white px-6 py-2 rounded-lg hover:bg-[#FF5252] transition font-semibold"
                     >
                         Login to Apply
                     </button>

@@ -29,12 +29,12 @@ const MyApplications = () => {
             ) : (
                 <div className="grid gap-4">
                     {applications.map(app => (
-                        <div key={app._id} className="bg-white rounded-xl shadow-md p-5">
-                            <h3 className="text-lg font-semibold text-gray-800">
+                        <div key={app._id} className="bg-[#2E1F1F] rounded-xl shadow-md p-5">
+                            <h3 className="text-lg font-semibold text-[#ffff]">
                                 {app.job?.title}
                             </h3>
-                            <p className="text-gray-500 text-sm">{app.job?.company}</p>
-                            <p className="text-gray-500 text-sm">{app.job?.location}</p>
+                            <p className="text-[#10B981] font-semibold text-sm">{app.job?.company}</p>
+                            <p className="text-[#ffff]  text-sm">{app.job?.location}</p>
                             <span className={`mt-3 inline-block px-3 py-1 rounded-full text-sm font-semibold
                 ${app.status === 'pending' ? 'bg-yellow-100 text-yellow-600' : ''}
                 ${app.status === 'accepted' ? 'bg-green-100 text-green-600' : ''}

@@ -30,9 +30,9 @@ const Register = () => {
         setLoading(false);
     };
     return (
-        <div className="min-h-screen bg-gray-50 flex items-center justify-center">
-            <div className="bg-white p-8 rounded-xl shadow-md w-full max-w-md">
-                <h2 className="text-2xl font-bold text-center text-gray-800 mb-6">
+        <div className="min-h-screen  flex items-center justify-center">
+            <div className="bg-[#2E1F1F] p-8 rounded-xl shadow-md w-full max-w-md">
+                <h2 className="text-2xl font-bold text-center text-[#ffff] mb-6">
                     Create Account
                 </h2>
 
@@ -44,51 +44,51 @@ const Register = () => {
 
                 <form onSubmit={handleSubmit} className="space-y-4">
                     <div>
-                        <label className="text-sm text-gray-600">Full Name</label>
+                        <label className="text-sm text-[#ffff]">Full Name</label>
                         <input
                             type="text"
                             name="name"
                             value={formData.name}
                             onChange={handleChange}
                             placeholder="Anuradha Sharma"
-                            className="w-full border border-gray-300 rounded-lg px-4 py-2 mt-1 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                            className="w-full border border-gray-300 rounded-lg px-4 py-2 mt-1 focus:outline-none focus:ring-2 focus:ring-[#361111d7]"
                             required
                         />
                     </div>
 
                     <div>
-                        <label className="text-sm text-gray-600">Email</label>
+                        <label className="text-sm text-[#ffff]">Email</label>
                         <input
                             type="email"
                             name="email"
                             value={formData.email}
                             onChange={handleChange}
                             placeholder="anuradha@gmail.com"
-                            className="w-full border border-gray-300 rounded-lg px-4 py-2 mt-1 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                            className="w-full border border-gray-300 rounded-lg px-4 py-2 mt-1 focus:outline-none focus:ring-2 focus:ring-[#361111d7]"
                             required
                         />
                     </div>
 
                     <div>
-                        <label className="text-sm text-gray-600">Password</label>
+                        <label className="text-sm text-[#ffff]">Password</label>
                         <input
                             type="password"
                             name="password"
                             value={formData.password}
                             onChange={handleChange}
                             placeholder="••••••••"
-                            className="w-full border border-gray-300 rounded-lg px-4 py-2 mt-1 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                            className="w-full border border-gray-300 rounded-lg px-4 py-2 mt-1 focus:outline-none focus:ring-2 focus:ring-[#361111d7]"
                             required
                         />
                     </div>
 
                     <div>
-                        <label className="text-sm text-gray-600">Register as</label>
+                        <label className="text-sm text-[#ffff]">Register as</label>
                         <select
                             name="role"
                             value={formData.role}
                             onChange={handleChange}
-                            className="w-full border border-gray-300 rounded-lg px-4 py-2 mt-1 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                            className="w-full border border-gray-300 rounded-lg px-4 py-2 mt-1 focus:outline-none focus:ring-2 focus:ring-[#361111d7]"
                         >
                             <option value="candidate">Candidate</option>
                             <option value="company">Company</option>
@@ -98,7 +98,7 @@ const Register = () => {
                     <button
                         type="submit"
                         disabled={loading}
-                        className="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition font-semibold"
+                        className="w-full bg-[#FF6B6B] text-white py-2 rounded-lg hover:bg-[#FF5252] transition font-semibold"
                     >
                         {loading ? 'Registering...' : 'Register'}
                     </button>
@@ -106,7 +106,7 @@ const Register = () => {
 
                 <p className="text-center text-sm text-gray-500 mt-4">
                     Already have an account?{' '}
-                    <Link to="/login" className="text-blue-600 hover:underline">
+                    <Link to="/login" className="text-[#10B981] hover:underline">
                         Login
                     </Link>
                 </p>

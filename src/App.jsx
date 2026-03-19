@@ -3,8 +3,8 @@ import Navbar from './components/Navbar';
 import ProtectedRoute from './components/ProtectedRoute';
 import Login from './pages/Login';
 import Register from './pages/Register';
-import Jobs from './pages/Jobs';
-import JobDetails from './pages/JobDetails';
+import Jobs from './Pages/Jobs';
+import JobDetails from './Pages/JobDetails';
 import PostJob from './Pages/PostJob';
 import MyApplications from './pages/MyApplications';
 import './App.css'
